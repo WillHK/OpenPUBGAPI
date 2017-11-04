@@ -9,3 +9,5 @@ Installation
 3. Build [Greenworks](https://github.com/greenheartgames/greenworks) for your platform in ./greenworks
 3. run 'npm run bundle' and once it finishes 'npm run start' 
 4. open localhost:3000 on a browser and explore the UI.
+
+The pubg-socket communication is derived from a class written by [Hormold](https://github.com/Hormold/pubg) 
