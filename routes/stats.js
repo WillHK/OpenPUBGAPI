@@ -5,6 +5,7 @@ const pubg = require('../lib/pubg-sockets');
 router.post('/register', (req, res) => {
   let newUser = req.body;
   let ingameName = newUser.name;
+  console.log(req.body);
   pubg.getUserStateByNickname(ingameName)
   .then((userData) => {
     res.send(userData);

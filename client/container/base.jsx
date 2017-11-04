@@ -19,8 +19,9 @@ class Base extends React.Component {
     this.getRecords = this.getRecords.bind(this);
   }
   
-  updateName(event, something, name) {
-    this.setState({ name });
+  updateName(event, something) {
+    console.log(name);
+    this.setState({ name: event.target.value });
   }
   
   updateRegion(event, something, region) {
