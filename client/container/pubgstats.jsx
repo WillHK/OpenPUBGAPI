@@ -45,7 +45,7 @@ const PUBGStats = ({
       </div>
     </div>
     <div>
-      { records }
+      { JSON.stringify(records) }
     </div>
   </div>
 );

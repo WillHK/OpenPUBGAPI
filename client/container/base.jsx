@@ -114,6 +114,7 @@ class Base extends React.Component {
       headers: headers,
       body: JSON.stringify(body),
     };
+    console.log('firing');
     return fetch('/leaderboard', init)
     .then( response => {
       response.json().then((data) => {
@@ -156,7 +157,7 @@ class Base extends React.Component {
             updateRegion={this.updateRegion}
             getRecords={this.getRecords}
             getAllRecords={this.getAllRecords}
-            getLeaderBoard={this.getLeaderboard}
+            getLeaderboard={this.getLeaderboard}
             records={this.state.records}
           />):''}
         </div>  

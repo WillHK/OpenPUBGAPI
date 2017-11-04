@@ -31,7 +31,8 @@ router.post('/allrecords', (req, res) => {
 
 router.post('/leaderboard', (req, res) => {
   let user = req.body;
-  pubg.getLeaderboard(user.region, user.mode, user.type, user.accountId)
+  console.log('leaderboard');
+  pubg.getLeaderboard(user.region, user.mode, user.type || 'Rating', user.accountId)
   .then((leaderboard) => {
     res.send({records: leaderboard});
   });
