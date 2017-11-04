@@ -16,7 +16,7 @@ router.post('/records', (req, res) => {
   let user = req.body;
   pubg.getRecords(user.AccountId, user.region, user.mode)
   .then((records) => {
-    console.log(records);
+    // console.log(records);
     res.send({records: records});
   });
 });
