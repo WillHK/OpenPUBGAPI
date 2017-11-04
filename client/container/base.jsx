@@ -82,7 +82,8 @@ class Base extends React.Component {
   getAllRecords() {
     let that = this;
     const body = {
-      AccountId: this.state.AccountId
+      AccountId: this.state.AccountId,
+      name: this.state.name,
     }
     const headers = new Headers({"Content-Type": "application/json", "withCredentials": true });
 
