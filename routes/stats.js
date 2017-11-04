@@ -9,7 +9,7 @@ router.post('/register', (req, res) => {
   pubg.getUserStateByNickname(ingameName)
   .then((userData) => {
     res.send(userData[0]);
-  })
+  });
 });
 
 router.post('/records', (req, res) => {
