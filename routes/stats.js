@@ -11,6 +11,28 @@ router.post('/register', (req, res) => {
   })
 });
 
-router.get('')
+router.post('/records', (req, res) => {
+  let user = req.body;
+  pubg.getRecords(user.AccountId, user.region, user.mode)
+  .then((records) => {
+    res.send({records: records});
+  })
+});
+
+router.post('/allrecords', (req, res) => {
+  let user = req.body;
+  pubg.getAllRecords(user.AccountId)
+  .then((records) => {
+    res.send({records: records});
+  });
+});
+
+router.post('/leaderboard', (req, res) => {
+  let user = req.body;
+  pubg.getLeaderboard(user.region, user.mode, user.type, user.accountId)
+  .then((leaderboard) => {
+    res.send({records: leaderboard});
+  });
+});
 
 module.exports = router;

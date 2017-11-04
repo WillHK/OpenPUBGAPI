@@ -74,11 +74,47 @@ class Base extends React.Component {
   }
 
   getAllRecords() {
+    let that = this;
+    const body = {
+      AccountId: this.state.AccountId
+    }
+    const headers = new Headers({"Content-Type": "application/json", "withCredentials": true });
 
+    const init = {
+      method: "POST",
+      headers: headers,
+      body: JSON.stringify(body),
+    };
+    return fetch('/allrecords', init)
+    .then( response => {
+      response.json().then((data) => {
+        console.log(data);
+        that.setState({ records: data});
+      });
+    });
   }
 
   getLeaderboard() {
+    let that = this;
+    const body = {
+      AccountId: this.state.AccountId,
+      region: this.state.region,
+      mode: this.state.mode,
+    }
+    const headers = new Headers({"Content-Type": "application/json", "withCredentials": true });
 
+    const init = {
+      method: "POST",
+      headers: headers,
+      body: JSON.stringify(body),
+    };
+    return fetch('/leaderboard', init)
+    .then( response => {
+      response.json().then((data) => {
+        console.log(data);
+        that.setState({ records: data });
+      });
+    });
   }
 
   displayNames(key) {
@@ -115,6 +151,7 @@ class Base extends React.Component {
             getRecords={this.getRecords}
             getAllRecords={this.getAllRecords}
             getLeaderBoard={this.getLeaderboard}
+            records={this.state.records}
           />):''}
         </div>  
     )
