@@ -1,0 +1,42 @@
+{
+  "name": "OpenPUBGAPI",
+  "version": "0.1.0",
+  "description": "test",
+  "main": "server.js",
+  "scripts": {
+    "watch": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bundle": "webpack"
+  },
+  "author": "Will Haeck",
+  "license": "GPLv3",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "btoa": "^1.1.2",
+    "debug": "^3.0.1",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.4",
+    "material-ui": "^0.19.1",
+    "node-fetch": "^1.7.3",
+    "prop-types": "^15.5.10",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "underscore": "^1.8.3",
+    "websocket": "^1.0.24",
+    "ws": "^3.1.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "eslint": "^4.6.1",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.3.0",
+    "nodemon": "^1.12.1",
+    "webpack": "^3.6.0"
+  }
+}
