@@ -8,7 +8,7 @@ router.post('/register', (req, res) => {
   console.log(req.body);
   pubg.getUserStateByNickname(ingameName)
   .then((userData) => {
-    res.send(userData);
+    res.send(userData[0]);
   })
 });
 
@@ -16,8 +16,9 @@ router.post('/records', (req, res) => {
   let user = req.body;
   pubg.getRecords(user.AccountId, user.region, user.mode)
   .then((records) => {
+    console.log(records);
     res.send({records: records});
-  })
+  });
 });
 
 router.post('/allrecords', (req, res) => {

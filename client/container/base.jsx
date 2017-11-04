@@ -11,24 +11,28 @@ class Base extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      AccountId: '',
     };
     this.register = this.register.bind(this);
     this.updateName = this.updateName.bind(this);
     this.updateRegion = this.updateRegion.bind(this);
     this.updateMode = this.updateMode.bind(this);
     this.getRecords = this.getRecords.bind(this);
+    this.getAllRecords = this.getAllRecords.bind(this);
+    this.getLeaderboard = this.getLeaderboard.bind(this);
   }
   
   updateName(event, something) {
-    console.log(name);
     this.setState({ name: event.target.value });
   }
   
   updateRegion(event, something, region) {
+    console.log(region);
     this.setState({ region })
   }
 
   updateMode(event, something, mode) {
+    console.log(mode);
     this.setState({ mode });
   }
 
@@ -47,7 +51,7 @@ class Base extends React.Component {
     .then( response => {
       response.json().then((data) => {
         console.log(data);
-        that.setState({ AccountId: data[0].AccountId, SteamName: data[0].SteamName, AvatarUrl: data[0].AvatarUrl });
+        that.setState({ AccountId: data.AccountId, SteamName: data.SteamName, AvatarUrl: data.AvatarUrl });
       });
     });
   }
@@ -69,7 +73,8 @@ class Base extends React.Component {
     return fetch('/records', init)
     .then( response => {
       response.json().then((data) => {
-        that.setState({ records: data.Records });
+        console.log(data);
+        that.setState({ records: data });
       });
     });
   }
@@ -143,10 +148,10 @@ class Base extends React.Component {
               onClick={this.register}
             />
           </div>
-          { this.state.accountId ? (
+          { this.state.AccountId != '' ? (
           <PUBGStats
-            mode={this.mode}
-            region={this.region}
+            mode={this.state.mode}
+            region={this.state.region}
             updateMode={this.updateMode}
             updateRegion={this.updateRegion}
             getRecords={this.getRecords}

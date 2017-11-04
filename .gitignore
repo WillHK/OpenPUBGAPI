@@ -3,3 +3,4 @@ node_modules/
 greenworks/
 public/js/app.bundle.js
 .env
+package-lock.json
