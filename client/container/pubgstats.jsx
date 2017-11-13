@@ -224,6 +224,8 @@ const PUBGStats = ({
           <MenuItem value="solo" primaryText="Solo" />
           <MenuItem value="duo" primaryText="Duos" />
           <MenuItem value="squad" primaryText="Squads" />
+          <MenuItem value="duo-fpp" primaryText="Duos FPP" />
+          <MenuItem value="squad-fpp" primaryText="Squads FPP" />
         </SelectField>
       </div>
       <div>
