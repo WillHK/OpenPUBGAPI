@@ -200,6 +200,7 @@ const PUBGStats = ({
   getLeaderboard,
   getRecords,
   records,
+  leaderboard,
 }) => (
   <div>
     <div>
@@ -242,6 +243,7 @@ const PUBGStats = ({
         ranks={records.Ranks}
         records={records.Records}
       />:''}
+      {leaderboard ? leaderboard:''}
     </div>
   </div>
 );

@@ -97,7 +97,7 @@ class Base extends React.Component {
     .then( response => {
       response.json().then((data) => {
         console.log(data);
-        that.setState({ records: data });
+        that.setState({ leaderboard: data });
       });
     });
   }
@@ -136,6 +136,7 @@ class Base extends React.Component {
             getRecords={this.getRecords}
             getLeaderboard={this.getLeaderboard}
             records={this.state.records}
+            leaderboard={this.state.leaderboard}
           />):''}
         </div>  
     )
