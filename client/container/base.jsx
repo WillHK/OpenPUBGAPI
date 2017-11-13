@@ -18,7 +18,6 @@ class Base extends React.Component {
     this.updateRegion = this.updateRegion.bind(this);
     this.updateMode = this.updateMode.bind(this);
     this.getRecords = this.getRecords.bind(this);
-    this.getAllRecords = this.getAllRecords.bind(this);
     this.getLeaderboard = this.getLeaderboard.bind(this);
   }
   
@@ -74,29 +73,7 @@ class Base extends React.Component {
     .then( response => {
       response.json().then((data) => {
         console.log(data);
-        that.setState({ records: data });
-      });
-    });
-  }
-
-  getAllRecords() {
-    let that = this;
-    const body = {
-      AccountId: this.state.AccountId,
-      name: this.state.name,
-    }
-    const headers = new Headers({"Content-Type": "application/json", "withCredentials": true });
-
-    const init = {
-      method: "POST",
-      headers: headers,
-      body: JSON.stringify(body),
-    };
-    return fetch('/allrecords', init)
-    .then( response => {
-      response.json().then((data) => {
-        console.log(data);
-        that.setState({ records: data});
+        that.setState({ records: data.records });
       });
     });
   }
@@ -157,7 +134,6 @@ class Base extends React.Component {
             updateMode={this.updateMode}
             updateRegion={this.updateRegion}
             getRecords={this.getRecords}
-            getAllRecords={this.getAllRecords}
             getLeaderboard={this.getLeaderboard}
             records={this.state.records}
           />):''}
