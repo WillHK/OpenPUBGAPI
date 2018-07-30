@@ -1,5 +1,8 @@
 # OpenPUBG API
 
+DEPRECATED - PUBG corp offered an official API available [here](https://developer.playbattlegrounds.com/)
+
+
 Once set up provides an easy web interface for you to look up PUBG stats.
 Also easily extensible and usable for other projects.
 
